@@ -62,17 +62,17 @@ Custom property | Description
               <px-alert-label id="icon" type="{{type}}" label="{{_getLabel(type, hideSeverity)}}" badge></px-alert-label>
             </template>
           </template>
-          <slot></slot>
+          <content select=".custom-icon"></content>
         </div>
       </template>
       <div class="message-column flex flex--middle">
         <div class="message-container">
-          <slot name="content">
+          <content select=".alert-message">
             <div class$="[[_getMessageClassNames(type, expanded)]]" id="message">
               <span class="title">{{ messageTitle }}</span>
               <span>{{ message }}</span>
             </div>
-          </slot>
+          </content>
           <span id="showMoreButton" class$="[[_getShowMoreClassNames(overset)]]" hidden$="[[!overset]]">[[_showBtnText]]</span>
         </div>
       </div>
